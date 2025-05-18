@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poupança</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Menu inicial&nbsp;&nbsp; Poupança</h1>
+    <div class="circle"></div>
+  </header>
+
+  <div class="container">
+    <div class="card-list" id="listaPoupanca"></div>
+
+    <div class="buttons">
+      <button onclick="abrirModal()">Criar</button>
+      <button>Resgatar</button>
+    </div>
+  </div>
+
+  <!-- Modal de nova poupança -->
+  <div id="novaPoupancaModal">
+    <div class="modal-content">
+      <p><strong>Saldo atual:</strong> 1.322,98</p>
+      <p><strong>Rentabilidade:</strong> 3,2%</p>
+      <label for="valor">Valor:</label><br />
+      <input type="number" id="valor" placeholder="R$" />
+      <div class="modal-buttons">
+        <button onclick="fecharModal()">Cancelar</button>
+        <button onclick="criarPoupanca()">Finalizar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
