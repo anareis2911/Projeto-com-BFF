@@ -1,20 +1,18 @@
-// npm install -g json-server
-// json-server --watch db.json --port 3000
-
+ 
 const modal = document.getElementById("novaPoupancaModal");
-
+ 
 document.addEventListener("DOMContentLoaded", listarPoupancas);
-
+ 
 function abrirModal() {
   modal.style.display = "flex";
 }
-
+ 
 function fecharModal() {
   modal.style.display = "none";
 }
-
+ 
 function listarPoupancas() {
-  fetch("http://localhost:3000/poupancas")
+fetch("http://localhost:3001/api/poupancas")
     .then(res => res.json())
     .then(data => {
       const lista = document.getElementById("listaPoupanca");
@@ -31,17 +29,17 @@ function listarPoupancas() {
       });
     });
 }
-
+ 
 function criarPoupanca() {
   const valor = document.getElementById("valor").value;
   const dataAtual = new Date().toISOString().split("T")[0];
-
+ 
   if (!valor) {
     alert("Preencha o valor.");
     return;
   }
-
-  fetch("http://localhost:3000/poupancas", {
+ 
+  fetch("http://localhost:3001/api/poupancas", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -55,3 +53,4 @@ function criarPoupanca() {
     document.getElementById("valor").value = "";
   });
 }
+ 
